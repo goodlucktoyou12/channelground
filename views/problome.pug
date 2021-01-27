@@ -1,0 +1,12 @@
+extends layouts/main
+block content
+      .notes
+           p 문제신고 
+      .form-container-k
+        form(action=`/users${routes.editProfile}`, method="post", enctype="multipart/form-data")
+            input(type="text", placeholder="닉네임" )
+            input(type="text", placeholder="이메일")
+            input(type="text", placeholder="전화번호")
+            textarea(name="description", placeholder="메세지", required=true)
+            button.btn.default(type='submit') 이메일 전송
+        .home-bodyline-e  @2020 BM

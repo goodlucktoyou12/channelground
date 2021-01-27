@@ -1,0 +1,28 @@
+extends layouts/main
+include mixins/videoBlock
+include mixins/noticeListItem
+block content
+   .me-profile
+        .me_information
+            if user.id === loggedUser.id
+                .me_dropdown 
+                    button.dropbtnx
+                        p  설정
+                    .me_dropdown-content
+                        a(href=`/users${routes.editProfile}`) 프로필수정
+                        a(href=`/users${routes.changePassword}`) 비밀번호수정
+                        a(href="") 회원탈퇴
+            .me_content
+                img.u-avatar(src=`/${user.avatarUrl}`)
+                h4.profile__username=user.name
+                .me_coin #{user.coin} KR
+                h4.me__descriptions=user.description
+        .me_gap
+        .me-videos
+            each item in user.videos 
+                +videoBlock({
+                    id:item.id,
+                    title:item.title,
+                    views:item.views,
+                    videoFile:item.fileUrl
+                })

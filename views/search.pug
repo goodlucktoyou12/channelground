@@ -1,0 +1,19 @@
+extends layouts/main
+include mixins/videoBlock
+block content
+    .friend_search
+       form(action=routes.search, method="get")
+                input(type="text", placeholder="영상검색", name="term")
+    .search__header
+        h3 검색: #{searchingBy}
+    .search__videos
+        if videos.length === 0
+            h5 검색결과 없습니다.
+        each item in videos
+            +videoBlock({
+                id:item.id,
+                title:item.title,
+                description:item.description,
+                views:item.views,
+                videoFile:item.fileUrl
+            })

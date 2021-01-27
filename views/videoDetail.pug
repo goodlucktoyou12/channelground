@@ -1,0 +1,25 @@
+extends layouts/main
+include mixins/videoPlayer
+
+block content
+    .video-detail__container
+        +videoPlayer({
+            src:video.fileUrl
+        })
+        .video__info
+            
+            h5.video__title=video.title
+            p.video__description=video.description
+            p.videoDate #{video.createdAt.getFullYear()}. #{video.createdAt.getMonth()+1}. #{video.createdAt.getDate()} 
+            if video.views === 1
+                span.video__views 1 조회수
+            else 
+                span.video__views #{video.views} 조회수
+            .video__author
+                a(href=routes.userDetail(video.creator.id))=video.creator.name
+            .video_subinfo
+              a(href=routes.userDetail(video.creator.id))
+                  img.video_creator-avatar(src=`/${video.creator.avatarUrl}`)
+            if loggedUser && video.creator.id === loggedUser.id
+                a(href=routes.editVideo(video.id))
+                    button 수정

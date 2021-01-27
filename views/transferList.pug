@@ -1,0 +1,10 @@
+extends layouts/main
+block content
+    .notes
+       p 환전신청 목록
+    .form-container-aa
+        ul
+            each item in transfer
+                li #{item.amount} KR을 예금주: #{item.bankName} #{item.bank} #{item.bankAddr}의 계좌로 환전 신청했습니다
+                .footer-transfer
+    .home-bodyline-a @2020 Funny Teaching 

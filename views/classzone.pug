@@ -1,0 +1,59 @@
+extends layouts/main
+include mixins/videoBlock
+include mixins/noticeListItem
+block content
+ .me-tkehdygks
+  .side-nav-ky
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        .sidenav
+          .me__sideline1
+              i.fas.fa-video
+          .me__sideline2
+              i.far.fa-image
+          .me__sideline2
+              i.fas.fa-book
+          
+          .me__sideline3
+              i.fas.fa-search
+          .me__sideline2
+              i.fas.fa-search
+
+  .silcigan
+  head
+   meta(name='viewport' content='width=device-width, initial-scale=1')
+   style.
+    * {box-sizing: border-box}
+    body {font-family: "Lato", sans-serif;}
+  body
+   .tab
+    button#defaultOpen.tablinks(onclick="openCity(event, 'London')") My page
+    button.tablinks(onclick="openCity(event, 'Paris')") video
+    button.tablinks(onclick="openCity(event, 'Tokyo')") picture
+    button.tablinks(onclick="openCity(event, 'hyeonki')") book
+   #London.tabcontent
+    h3 London
+    p London is the capital city of England.
+   #Paris.tabcontent
+    h3 Paris
+    p Paris is the capital of France.
+   #Tokyo.tabcontent
+    h3 Tokyo
+    p Tokyo is the capital of Japan.
+   #hyeonki.tabcontent
+    h3 hyeonki
+    p hyeonki is the capital of Japan.
+   script.
+    function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+    document.getElementById("defaultOpen").click();

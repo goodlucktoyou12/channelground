@@ -1,0 +1,12 @@
+extends layouts/main
+include mixins/noticeListItem
+block content
+    .form-container
+        ul.home-notice-list
+            each item in notices
+                +noticeListItem({
+                    title: item.title
+                })
+    footer.footergg
+           .footer__icon
+           span.footer__text #{siteName} #{new Date().getFullYear()} &copy; 

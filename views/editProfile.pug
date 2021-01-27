@@ -1,0 +1,13 @@
+extends layouts/main
+
+block content
+    .form-container
+        form(action=`/users${routes.editProfile}`, method="post", enctype="multipart/form-data")
+            .fileUpload   
+                label(for="avatar") 프로필
+                input(type="file", id="avatar", name="avatar", accept="image/*")
+            input(type="text", placeholder="닉네임", name="name", value=loggedUser.name)
+            input(type="text", placeholder="성함", name="realname", value=loggedUser.realname)
+            input(type="text", placeholder="소개", name="description", value=loggedUser.description)
+            input(type="email", placeholder="이메일", name="email", value=loggedUser.email)
+            input(type="submit", value="프로필업로드")

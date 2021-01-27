@@ -1,0 +1,21 @@
+.videoBlock{
+  margin-left: 300px;
+  video {
+    max-width: 20%;
+  }
+  .videoBlock__title {
+    
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 7px;
+    width: 21%;
+    color: rgb(80, 76, 76);
+    cursor: pointer;
+  }
+  .videoBlock__views {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: rgb(65, 61, 61);
+  }
+}

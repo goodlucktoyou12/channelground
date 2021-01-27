@@ -1,0 +1,15 @@
+extends layouts/main
+block content
+    .form-coins
+      .form-coins_1
+        input#bankName(type="text", placeholder="예금주", required=true, style= 'box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);')
+      .form-coins_1
+        input#bankPnumber(type="number", placeholder="휴대번호", required=true, style= 'box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);')
+      .form-coins_1
+        input#bank(type="bankname", placeholder="은행입력 예) 국민은행", required=true, style= 'box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);')
+      .form-coins_1
+        input#bankAddr(type="account", placeholder="환전받을 계좌번호", required=true, style= 'box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);')
+      .form-coins_1
+        input#coin(type="amount", placeholder="환전할 KR 예시) 2000" min="0", required=true, style= 'box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);')
+      .form-coins_1
+        button#transferCoin KR 환전하기     
